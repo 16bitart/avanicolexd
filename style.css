@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&family=Roboto&family=Ubuntu:ital,wght@0,400;0,700;1,400;1,500;1,700&display=swap');
+
+/*
+font-family: 'Lato', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Ubuntu', sans-serif; 
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Roboto+Condensed&display=swap');
+
+/* 
+font-family: 'Annie Use Your Telescope', cursive;
+font-family: 'Roboto Condensed', sans-serif;
+*/
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: floralwhite;
+  font-family: 'Roboto Condensed', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  /* Set everything to the Center of the screen: */
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+}
+
+h1, h2 {
+  font-family: 'Annie Use Your Telescope', cursive;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.header h1 {
+  position: relative;
+  height: 3rem;
+  font-size: 3rem;
+  letter-spacing: 8px;
+  text-align: center;
+  justify-content: center;
+}
+
+.banner {
+  width: 90vw;
+  border-radius: 10px;
+  background-color: pink;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+.panel {
+  background-color: aqua;
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid pink;
+  flex: 0.5;
+  height: 80vh;
+  border-radius: 50px;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+
+.panel-header {
+  font-size: 2px;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  border: 3px solid pink;
+  flex: 5;
+}
+
+.panel.active .panel-header {
+  /* position: absolute;
+  left: 20px;
+  top: 20px; */
+  font-size: 24px;
+  opacity: 1;
+  transition: all 1s ease-in 0.2s;
+}
+
+@media(max-width: 480px){
+  .container{
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(3)
+  .panel:nth-of-type(4){
+    display: none;
+  }
+}
