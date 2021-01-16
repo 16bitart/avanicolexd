@@ -1,39 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-  <title>Expanding Cards</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <title>Expanding Cards</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="banner">
+        <div class="banner-item">
+          <img id="banner-badge" src="AvaNicoleXD.png" alt="Profile Badge" />
+        </div>
+        <div class="banner-item">
+          <h1>AvaNicoleXD</h1>
+        </div>
+      </div>
+    </div>
 
-<div class="header">
-  <div class="banner">
-    <h1>AvaNicoleXD</h1>
-  </div>
-</div>
-<div class="container">
-    <div class="panel active">
-      <h3 class="panel-header">Twitch</h3>
-      <iframe
-      src="https://player.twitch.tv/?https://www.twitch.tv/avanicolexd&parent=avanicolexd.com"
-      height="300"
-      width="600"
-      allowfullscreen="<allowfullscreen>">
-  </iframe>
+    <div class="container">
+      <div class="panel active">
+        <h3 class="panel-header">Welcome!</h3>
+        <div class="panel-content">
+          
+          <div class="panel-content-item">
+            <p>
+              I'm Ava Nicole, my pronouns are she/her (other acceptable names:
+              ava, nicole, aba, avzies, avi.) I'm a high-schooler & streamer who
+              just got started. I love to interact with others and play video
+              games. I hope you will stay awhile.
+            </p>
+          </div>
+
+          <div class="panel-content-item">
+            <p>
+              You will probably see me play lots of RPG & Simulation games on my
+              channel. Some of my favorite games are The Sims, Animal Crossing,
+              & Stardew Valley.
+            </p>
+          </div>
+
+          <div class="panel-content-item">
+            <p>
+              I'm also a musician and you can check me out on Youtube. I've been
+              in a band for 3 years and have played a multitude of instruments
+              starting from the age of 5.
+            </p>
+          </div>
+
+        </div>
+      </div>
+      <div id="twitchPanel" class="panel">
+        <h3 class="panel-header">Twitch</h3>
+        <div class="twitch-page">
+          <div id="twitch-embed"></div>
+          <script src="https://embed.twitch.tv/embed/v1.js"></script>
+        </div>
+      </div>
+      <div class="panel">
+        <h3 class="panel-header">Discord</h3>
+      </div>
+
+      <div class="panel">
+        <h3 class="panel-header">Follow Me!</h3>
+      </div>
     </div>
-    <div class="panel">
-      <h3 class="panel-header">Discord</h3>
-    </div>
-    <div class="panel">
-      <h3 class="panel-header">Coming Soon...</h3>
-    </div>
-    <div class="panel">
-      <h3 class="panel-header">Coming Soon...</h3>
-    </div> 
-</div>
-  <script src="app.js"></script>
-</body>
+
+    <script src="app.js"></script>
+  </body>
 </html>
