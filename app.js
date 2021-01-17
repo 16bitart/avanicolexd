@@ -26,7 +26,7 @@ panels.forEach((panel) => {
     }
 
     if(followPanel.classList.contains("active")){
-      setTimeout(ShowFollowContent, 500);
+      setTimeout(ShowFollowContent, 1500);
     }else{
       HideFollowContent();
     }
@@ -52,7 +52,7 @@ function ShowTwitchEmbed() {
   `;
 
 
-  twitchPlayer.innerHTML = `<div id="twitch-embed"></div>`;
+  twitchPlayer.innerHTML = `<div id="twitch-embed"></div><h3><a class="support-link" href="https://streamlabs.com/avanicolexd/tip">Want to support me?</a></h3>`;
   //twitchPlayer.innerHTML = twitchSmallVideo;
   let embed = new Twitch.Embed("twitch-embed", {
     width: twitchWidth,
