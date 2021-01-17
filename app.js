@@ -3,6 +3,7 @@ const twitchPanel = document.querySelector("#twitchPanel");
 const followPanel = document.querySelector("#followPanel");
 const twitchPanelItem = document.querySelector("#twitchPanelContentItem");
 
+const twitchPlayer = document.querySelector("#twitchPlayer");
 const youTubeDiv = document.querySelector("#youtubeContent");
 const instagramDiv = document.querySelector("#instagramContent");
 const twitterDiv = document.querySelector("#twitterContent");
@@ -18,14 +19,14 @@ panels.forEach((panel) => {
 
     if (twitchPanel.classList.contains("active")) {
       console.log("Twitch activate!");
-      setTimeout(ShowTwitchEmbed, 1000);
+      setTimeout(ShowTwitchEmbed, 1500);
     } else {
       console.log("Twitch deactivate!");
       HideTwitchEmbed();
     }
 
     if(followPanel.classList.contains("active")){
-      ShowFollowContent();
+      setTimeout(ShowFollowContent, 500);
     }else{
       HideFollowContent();
     }
@@ -41,19 +42,7 @@ function removeActiveClass() {
 }
 
 function ShowTwitchEmbed() {
-
-  let twitchEmbedding = `<h3 class="panel-header">Twitch</h3>
-          <div class="panel-content">
-                      <h3 id="online-status" class="status-text">Offline</h3>
-
-            <div class="panel-content-item-twitch">
-              <div id="twitch-embed"></div>
-          </div>
-                    <div class="panel-content-item">
-                        <p><a href="https://streamlabs.com/avanicolexd/tip">Want to support me?</a></p>
-          </div>`;
-
-  twitchPanel.innerHTML = twitchEmbedding;
+  twitchPlayer.innerHTML = `<div id="twitch-embed"></div>`;
   let embed = new Twitch.Embed("twitch-embed", {
     width: twitchWidth,
     height: twitchHeight,
@@ -62,29 +51,18 @@ function ShowTwitchEmbed() {
   });
 
   let player = embed.player;
-  player.HideTwitchEmbed();
-
 }
 
 function HideTwitchEmbed() {
-  twitchPanel.innerHTML = `<h3 class="panel-header">Twitch</h3>`;
+  twitchPlayer.innerHTML = "Player loading...";
 }
 
 function ShowFollowContent() {
-  let youTubeEmbed = `
-  <iframe 
-            width="560" 
-            height="315" 
-            src="https://www.youtube.com/embed/VO-MMoRKuzQ"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-              </iframe>
-  `;
-
-  youTubeDiv.innerHTML = youTubeEmbed;
+  youTubeDiv.classList.remove("inactive");
+  instagramDiv.classList.remove("inactive");
 }
 
 function HideFollowContent() {
-  youTubeDiv.innerHTML = "";
+  youTubeDiv.classList.add("inactive");
+  instagramDiv.classList.add("inactive");
 }
