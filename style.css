@@ -136,6 +136,10 @@ p {
   transition: all 1s ease-in 0.3s;
 }
 
+.p-center {
+  text-align: center;
+}
+
 .status-text {
   font-size: 32px;
   text-decoration: underline;

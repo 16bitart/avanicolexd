@@ -9,6 +9,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     />
     <title>Expanding Cards</title>
+    <script async src="//www.instagram.com/embed.js"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
   </head>
 
   <body>
@@ -71,16 +74,43 @@
         <h3 class="panel-header">Discord</h3>
       </div>
 
-      <div class="panel">
+      <div id="followPanel" class="panel">
         <h3 class="panel-header">Follow Me!</h3>
         <div class="panel-content">
-          <div class="panel-content-item-h"><p>Instagram</p></div>
-          <div class="panel-content-item-h"><p>Twitter</p></div>
-          <div class="panel-content-item-h"><p>YouTube</p></div>
-        </div>
+          <div class="panel-content-item-h">
+            <p class="p-center">
+              <a href=https://www.youtube.com/channel/UCfr1adXPVPrZ3JK9zQY82tw>YouTube</a>
+            </p>
+            <div id="youtubeContent">
+              <!-- <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/VO-MMoRKuzQ"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+              </iframe> -->
+            </div>
+          </div>
+          <div class="panel-content-item-h"><p class="p-center"><a href="https://www.instagram.com/avanicolex/">Instagram</a> </p>
+            <div id="instagramContent">
+              
+            </div>
+          </div>
+          <div class="panel-content-item-h"><p class="p-center">
+            <a href="https://twitter.com/avanicolexd?s=20">Twitter</a>
+            </p>
+            <div id="twitterContent">
+
+            </div>
+          </div>
+
+      <!-- content end -->
       </div>
+      <!-- panel end-->
+      </div> 
+      <!--container end -->
     </div>
-    <script src="https://embed.twitch.tv/embed/v1.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
