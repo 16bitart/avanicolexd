@@ -1,34 +1,60 @@
-const panels = document.querySelectorAll('.panel');
-const twitchPanel = document.querySelector('#twitch');
+const panels = document.querySelectorAll(".panel");
+const twitchPanel = document.querySelector("#twitchPanel");
+const twitchPanelItem = document.querySelector("#twitchPanelContentItem");
+
+const twitchWidth = 1280;
+const twitchHeight = 720;
 
 panels.forEach((panel) => {
   console.log(panel);
-  panel.addEventListener('click', () => {
+  panel.addEventListener("click", () => {
     removeActiveClass();
-    panel.classList.add('active');
-  })
-})
+    panel.classList.add("active");
 
-function removeActiveClass(){
-  panels.forEach(panel =>{
-    panel.classList.remove('active');
+    if (twitchPanel.classList.contains("active")) {
+      console.log("Twitch activate!");
+      ShowTwitchEmbed();
+    } else {
+      console.log("Twitch deactivate!");
+      HideTwitchEmbed();
+    }
+  });
+});
+
+function removeActiveClass() {
+  panels.forEach((panel) => {
+    if (panel.classList.contains("active")) {
+      panel.classList.remove("active");
+    }
   });
 }
 
+function ShowTwitchEmbed() {
 
-function CreateTwitchPage(){
-let twitchWidth = 1280;
-let twitchHeight = 720;
+  let twitchEmbedding = `<h3 class="panel-header">Twitch</h3>
+          <div class="panel-content">
+                      <h3 id="online-status" class="status-text">Offline</h3>
 
-let twitchChannel = new Twitch.Embed("twitch-embed", {
-  width: twitchWidth,
-  height: twitchHeight,
-  autoplay: true,
-  channel: "avanicolexd",
-  // only needed if your site is also embedded on embed.example.com and othersite.example.com
-  parent: ["embed.example.com", "othersite.example.com"],
-});
+            <div class="panel-content-item-twitch">
+              <div id="twitch-embed"></div>
+          </div>
+                    <div class="panel-content-item">
+                        <p><a href="https://streamlabs.com/avanicolexd/tip">Want to support me?</a></p>
+          </div>`;
+
+  twitchPanel.innerHTML = twitchEmbedding;
+  let embed = new Twitch.Embed("twitch-embed", {
+    width: twitchWidth,
+    height: twitchHeight,
+    autoplay: true,
+    channel: "avanicolexd",
+  });
+
+  let player = embed.player;
+  player.HideTwitchEmbed();
+
 }
 
-
-
+function HideTwitchEmbed() {
+  twitchPanel.innerHTML = `<h3 class="panel-header">Twitch</h3>`;
+}

@@ -59,15 +59,20 @@ p {
 .banner {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 90vw;
   border-radius: 10px;
   background-color: pink;
 }
 
-.banner-item:first-of-type {
-  border-radius: 25px;
+.banner-item {
   width: 20vw;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.banner-item:first-of-type img {
+  border-radius: 50%;
 }
 
 .container {
@@ -126,9 +131,16 @@ p {
 }
 
 .panel.active .panel-content {
-  margin-top: 100px;
+  margin-top: 50px;
   opacity: 1;
   transition: all 1s ease-in 0.3s;
+}
+
+.status-text {
+  font-size: 32px;
+  text-decoration: underline;
+  letter-spacing: 3px;
+  font-family: 'Annie Use Your Telescope', cursive;
 }
 
 @media (max-width: 480px) {
