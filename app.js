@@ -8,8 +8,8 @@ const youTubeDiv = document.querySelector("#youtubeContent");
 const instagramDiv = document.querySelector("#instagramContent");
 const twitterDiv = document.querySelector("#twitterContent");
 
-const twitchWidth = 1280;
-const twitchHeight = 720;
+const twitchWidth = 640;
+const twitchHeight = 480;
 
 panels.forEach((panel) => {
   console.log(panel);
@@ -42,7 +42,18 @@ function removeActiveClass() {
 }
 
 function ShowTwitchEmbed() {
+  let twitchSmallVideo = `
+  <iframe
+    src="https://player.twitch.tv/?avanicolexd&parent=avanicolexd.com"
+    height="<height>"
+    width="<width>"
+    allowfullscreen="<allowfullscreen>">
+</iframe>
+  `;
+
+
   twitchPlayer.innerHTML = `<div id="twitch-embed"></div>`;
+  //twitchPlayer.innerHTML = twitchSmallVideo;
   let embed = new Twitch.Embed("twitch-embed", {
     width: twitchWidth,
     height: twitchHeight,
