@@ -7,7 +7,9 @@ const twitchPlayer = document.querySelector("#twitchPlayer");
 const youTubeDiv = document.querySelector("#youtubeContent");
 const instagramDiv = document.querySelector("#instagramContent");
 const twitterDiv = document.querySelector("#twitterContent");
-
+// const discordEmbed = document.querySelector("#discordEmbed");
+const followContent = document.querySelector("#followContent");
+const twitchHeader = document.querySelector("#twitchHeader");
 const twitchWidth = 640;
 const twitchHeight = 480;
 
@@ -51,8 +53,12 @@ function ShowTwitchEmbed() {
 </iframe>
   `;
 
-
-  twitchPlayer.innerHTML = `<div id="twitch-embed"></div><h3><a class="support-link" href="https://streamlabs.com/avanicolexd/tip">Want to support me?</a></h3>`;
+  twitchHeader.innerHTML = `
+              <h3 id="online-status" class="panel-content-item status-text">Offline</h3>
+            <h4 class="panel-content-item"><a class="support-link" href="https://streamlabs.com/avanicolexd/tip">Want to support me?</a></h4>
+  `;
+  twitchPlayer.classList.remove("inactive");
+  twitchPlayer.innerHTML = `<div id="twitch-embed"></div>`;
   //twitchPlayer.innerHTML = twitchSmallVideo;
   let embed = new Twitch.Embed("twitch-embed", {
     width: twitchWidth,
@@ -65,15 +71,37 @@ function ShowTwitchEmbed() {
 }
 
 function HideTwitchEmbed() {
+  twitchHeader.innerHTML = "";
   twitchPlayer.innerHTML = "Player loading...";
+  twitchPlayer.classList.add("inactive");
 }
 
 function ShowFollowContent() {
+  followContent.classList.remove("inactive");
   youTubeDiv.classList.remove("inactive");
+  youTubeDiv.innerHTML = `<iframe 
+            width="480" 
+            height="270" 
+            src="https://www.youtube.com/embed/VO-MMoRKuzQ"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+              </iframe>`;
   instagramDiv.classList.remove("inactive");
+
 }
 
 function HideFollowContent() {
+  followContent.classList.add("inactive");
   youTubeDiv.classList.add("inactive");
+  youTubeDiv.innerHTML = "";
   instagramDiv.classList.add("inactive");
+}
+
+function ShowDiscordContent() {
+
+}
+
+function HideDiscordContent() {
+
 }

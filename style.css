@@ -19,7 +19,8 @@ font-family: 'Roboto Condensed', sans-serif;
 }
 
 body {
-  background-color: #FFD0D3;
+  background: radial-gradient(ellipse, #ffd0d3ff, #f6afa2ff, #cec4dcff, #a99cd3ff, #97d2fbff);
+  background-size: cover;
   font-family: "Roboto Condensed", sans-serif;
   display: flex;
   flex-direction: column;
@@ -27,7 +28,7 @@ body {
   margin: 0;
   /* Set everything to the Center of the screen: */
   justify-content: center;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 h1,
@@ -35,8 +36,21 @@ h2 {
   font-family: "Annie Use Your Telescope", cursive;
 }
 
+.panel.active .panel-content p.about {
+  font-size: 28px;
+  font-family: "Annie Use Your Telescope", cursive;
+}
+
+.social-media-link,
+.support-link {
+  text-decoration: none;
+  font-size: 32px;
+  font-family: "Annie Use Your Telescope", cursive;
+}
+
 .header {
-  margin-top: 25px;
+  height: 5vh;
+  margin-top: 5vh;
   margin-bottom: 25px;
   display: flex;
   justify-content: center;
@@ -44,7 +58,6 @@ h2 {
 
 .header h1 {
   position: relative;
-  height: 3rem;
   font-size: 3rem;
   letter-spacing: 8px;
   text-align: center;
@@ -52,12 +65,12 @@ h2 {
 }
 
 .banner {
+  background: linear-gradient( to right, #ffd0d3ff,#CEC4DC);
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 90vw;
   border-radius: 10px;
-  background-color: #CEC4DC;
 }
 
 .banner-item {
@@ -86,7 +99,7 @@ h2 {
   border-radius: 50px;
   margin: 10px;
   position: relative;
-  transition: flex 0.7s ease-in;
+  transition: all 0.7s ease-in;
 }
 
 .panel-header {
@@ -107,75 +120,75 @@ h2 {
 }
 
 .panel-content-rows {
-  display: flex;  flex: 0;
+  display: flex;
   flex-direction: row;
   opacity: 0;
+    transition: all 1s ease-in 0.5s;
+
 }
 
 .panel-content-item {
-  visibility: hidden;
-}
-
-.panel-content-item-h {
-
+  flex: 2;
+  opacity: 0;
 }
 
 .panel.active {
   background-color: #CEC4DC;
-  border: 3px solid #a99cd3ff;
-  flex: 6;
+  border: 4px solid #a99cd3ff;
+  flex: 8;
   transition: all 1s ease-in;
 }
 
 .panel.active .panel-header {
-  /* position: absolute;
-  left: 20px;
-  top: 20px; */
-  font-size: 24px;
-  opacity: 1;
+  left: 40vw;
+  font-size: 48px;
+  letter-spacing: 8px;
+  text-decoration: underline;
+  opacity: .9;
   transition: all 1s ease-in 0.2s;
 }
 
 .panel.active .panel-content {
-  margin-top: 50px;
   opacity: 1;
   transition: all 1s ease-in 0.2s;
 }
 
-.panel.active  .panel-content-rows {
-
-  flex: 2;
+.panel.active .panel-content-rows {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
   opacity: 1;
-  transition: all 1s ease-in 0.5s;
 }
 
 .panel.active .panel-content-item {
-  visibility: unset;
-  padding: 20px;
-  transition: all 1s ease-in 0.2s;
+  opacity: 1;
 }
 
-.panel.active .panel-content a,
-.panel.active .panel-content p,
-.panel.active .panel-content-rows a,
-.panel.active .panel-content-rows p {
+.follow-item {
   text-align: center;
-  font-size: 24px;
-  font-family: "Roboto Condensed", sans-serif;
-  opacity: 1;
-  transition: all 1s ease-in 0.1s;
+  margin: 50px;
+}
+
+.twitch-header {
+  text-align: center;
+  margin-bottom: 20px;
+  flex: 1;
+  width: 100%;
 }
 
 .inactive {
   display: none;
   opacity: 0;
+  transition: 1s ease;
 }
 
 .status-text {
   font-size: 32px;
   text-align: center;
+  padding-top: 10px;
+  margin: 0;
   text-decoration: underline;
-  letter-spacing: 3px;
+  letter-spacing: 6px;
   font-family: 'Annie Use Your Telescope', cursive;
   transition: all 1s ease-in 0.2s;
 }

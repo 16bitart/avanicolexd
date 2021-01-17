@@ -12,6 +12,13 @@
     <script async src="//www.instagram.com/embed.js"></script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+      const crate = new Crate({
+        server: '799849779034456085',
+        channel: '799849779467255828',
+        color: "#f6afa2ff"
+      });
+    </script>
   </head>
 
   <body>
@@ -31,7 +38,7 @@
         <h3 class="panel-header">Welcome!</h3>
         <div class="panel-content">
           <div class="panel-content-item">
-            <p>
+            <p class="about">
               I'm Ava Nicole, my pronouns are she/her (other acceptable names:
               ava, nicole, aba, avzies, avi.) I'm a high-schooler & streamer who
               just got started. I love to interact with others and play video
@@ -39,16 +46,16 @@
             </p>
           </div>
 
-          <div class="panel-content-item">
-            <p>
+          <div class="panel-content-item about">
+            <p class="about">
               You will probably see me play lots of RPG & Simulation games on my
               channel. Some of my favorite games are The Sims, Animal Crossing,
               & Stardew Valley.
             </p>
           </div>
 
-          <div class="panel-content-item">
-            <p>
+          <div class="panel-content-item about">
+            <p class="about">
               I'm also a musician and you can check me out on Youtube. I've been
               in a band for 3 years and have played a multitude of instruments
               starting from the age of 5.
@@ -60,28 +67,37 @@
       <div id="twitchPanel" class="panel">
         <h3 class="panel-header">Twitch</h3>
         <div class="panel-content">
-
-          <h3 id="online-status" class="status-text">Offline</h3>
-
+        <div id="twitchHeader" class="panel-content-rows twitch-header">
+            <h3 id="online-status" class="panel-content-item status-text">Offline</h3>
+            <h4 class="panel-content-item"><a class="support-link" href="https://streamlabs.com/avanicolexd/tip">Want to support me?</a></h4>
+        </div>
           <div id="twitchPlayer" class="panel-content-item">
             <p class="p-center">Player Loading...</p>
           </div>
 
+          
         </div>
       </div>
 
-
-      <div class="panel">
+      <!-- <div class="panel">
         <h3 class="panel-header">Discord</h3>
-                  <div class="panel-content-item"></div>
-      </div>
+                  <div id="discordEmbed" class="panel-content-item">
+                    <widgetbot
+                      server="799849779034456085"
+                      channel="799849931522179102"
+                      width="640"
+                      height="480">
+                    </widgetbot>
+                    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+                  </div>
+      </div> -->
 
       <div id="followPanel" class="panel">
         <h3 class="panel-header">Follow Me!</h3>
-        <div class="panel-content">
+        <div id="followContent" class="panel-content inactive">
           <div class="panel-content-rows">
-            <div class="panel-content-item">
-              <p><a href=https://www.youtube.com/channel/UCfr1adXPVPrZ3JK9zQY82tw>YouTube</a></p>
+            <div class="panel-content-item follow-item">
+              <p><a href=https://www.youtube.com/channel/UCfr1adXPVPrZ3JK9zQY82tw class="social-media-link">YouTube</a></p>
               <div id="youtubeContent" class="inactive">
               <iframe 
             width="480" 
@@ -94,7 +110,7 @@
             </div>
           </div>
           
-          <div class="panel-content-item"><p><a href="https://www.instagram.com/avanicolex/">Instagram</a></p>
+          <div class="panel-content-item follow-item"><p> <a href="https://www.instagram.com/avanicolex/" class="social-media-link">Instagram</a></p>
             <div id="instagramContent" class="inactive">
               <blockquote class="instagram-media"
                data-instgrm-permalink="https://www.instagram.com/p/B4U9RPeBWtO/?utm_source=ig_embed&amp;utm_campaign=loading" 
@@ -109,8 +125,8 @@
           </div>
           
         </div>
-                  <div class="panel-content-item">
-            <a href="https://twitter.com/avanicolexd?s=20">Twitter</a>
+            <div class="panel-content-item">
+              <a href="https://twitter.com/avanicolexd?s=20" class="social-media-link">Twitter</a>
             <div id="twitterContent">
             </div>
           </div>
